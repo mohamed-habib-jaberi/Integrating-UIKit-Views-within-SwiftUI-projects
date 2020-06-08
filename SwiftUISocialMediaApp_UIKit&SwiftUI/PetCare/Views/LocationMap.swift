@@ -10,10 +10,29 @@ import SwiftUI
 import MapKit
 
 struct LocationMap: UIViewRepresentable {
+    
+    
+    class LocationCoordinator: NSObject, MKMapViewDelegate {
+        var mapView: LocationMap
+        
+        init(_ mapView: LocationMap) {
+            self.mapView = mapView
+        }
+        
+        func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
+            print("Finish rendering Map! find the mice!")
+        }
+    }
+    
+    func makeCoordinator() -> LocationCoordinator {
+        LocationCoordinator(self)
+    }
+    
   var mouseSpotting: MouseLocation
 
     func makeUIView(context: Context) -> MKMapView {
         let map = MKMapView(frame: .zero)
+        map.delegate = context.coordinator
         return map
     }
     
