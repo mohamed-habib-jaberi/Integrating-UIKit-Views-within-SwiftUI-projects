@@ -10,10 +10,27 @@ import SwiftUI
 
 struct MouseAlertView: View {
     
-    
+    @State private var locations = MouseLocation.demoData
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            List{
+                ForEach(locations) { location in
+                    NavigationLink(destination: LocationView(mouseLocation: location)) {
+                        Text("\(location.description)")
+                            .font(.body)
+                        
+                    }
+                }
+            .onDelete(perform: removeLocation)
+            }
+        }
+    }
+    
+    func removeLocation(at offset: IndexSet) {
+        if let first = offset.first {
+            locations.remove(at: first)
+        }
     }
 }
 

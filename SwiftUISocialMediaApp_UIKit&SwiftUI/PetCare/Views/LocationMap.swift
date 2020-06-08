@@ -9,10 +9,18 @@
 import SwiftUI
 import MapKit
 
-struct LocationMap: View {
+struct LocationMap: UIViewRepresentable {
   var mouseSpotting: MouseLocation
 
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+    func makeUIView(context: Context) -> MKMapView {
+        let map = MKMapView(frame: .zero)
+        return map
+    }
+    
+    func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<LocationMap>) {
+        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        let region = MKCoordinateRegion(center: mouseSpotting.coordinate, span: span)
+        uiView.setRegion(region, animated: true)
+        
     }
 }
