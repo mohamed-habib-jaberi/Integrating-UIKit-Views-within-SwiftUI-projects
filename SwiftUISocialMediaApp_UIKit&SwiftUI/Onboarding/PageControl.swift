@@ -11,11 +11,35 @@ import UIKit
 
 struct PageControl: UIViewRepresentable {
 
-  func makeUIView(context: Context) -> UIPageControl {
-    UIPageControl()
+    var pageCount: Int
+    
+    class PageCoordinator: NSObject {
+        var control: PageControl
+        
+        init(_ control: PageControl) {
+            self.control = control
+        }
+        
+        @objc func updateCurrentPage(_ sender: UIPageControl){
+            control.currentPage = sender.currentPage
+        }
+    }
+    
+    @Binding var currentPage: Int
+    
+ func makeUIView(context: Context) -> UIPageControl {
+   let pageControl = UIPageControl()
+    pageControl.numberOfPages = pageCount
+    pageControl.addTarget(context.coordinator, action: #selector(PageCoordinator.updateCurrentPage), for: .valueChanged)
+    return pageControl
   }
 
   func updateUIView(_ uiView: UIPageControl, context: Context) {
 
+    uiView.currentPage = currentPage
   }
+    
+    func makeCoordinator() -> PageCoordinator {
+        PageCoordinator(self)
+    }
 }
