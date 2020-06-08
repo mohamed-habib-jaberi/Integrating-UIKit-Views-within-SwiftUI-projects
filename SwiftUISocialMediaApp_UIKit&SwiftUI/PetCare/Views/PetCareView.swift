@@ -35,16 +35,41 @@ struct PetCareView: View {
                     PetCareRow(petModel: petModel.selectedPet)
                 }
                 .navigationBarTitle(Text(verbatim: "Pet Care"), displayMode: .inline)
+                .navigationBarItems(
+                        trailing: Button(action: {
+                          self.isPresented.toggle()
+                        }, label: {
+                          Text(verbatim: "Mouse Alert!")
+                        })
+                    )
                 
             }else{
-                HStack{
-                    PetProfileImage(humanPet: petModel.selectedPet)
-                                   PetCareRow(petModel: petModel.selectedPet)
-                                   .frame(width: 200)
+              VStack {
+                VStack(alignment: .center) {
+                  PetProfileImage(humanPet: petModel.selectedPet)
+                  
+                  Text(petModel.selectedPet.name)
+                    .font(Font.system(size: 32, design: .rounded))
+                    .foregroundColor(.myGreen)
                 }
-                    .navigationBarTitle(Text(verbatim: "Pet Care"), displayMode: .large)
+                
+                PetBioRow(hobbyText: petModel.selectedPet.favoriteHobby)
+                
+                PetCareRow(petModel: petModel.selectedPet)
+              }
+              .navigationBarTitle(Text(verbatim: "Pet Care"), displayMode: .inline)
+                .navigationBarItems(
+                  trailing: Button(action: {
+                    self.isPresented.toggle()
+                  }, label: {
+                    Text(verbatim: "Mouse Alert!")
+                  })
+              )
             }
         }
+        .sheet(isPresented: self.$isPresented, content: {
+             Text("Find the mice!")
+           })
     }
 }
 struct PetCareView_Previews: PreviewProvider {

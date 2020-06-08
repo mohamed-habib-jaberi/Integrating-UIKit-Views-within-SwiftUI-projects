@@ -34,6 +34,10 @@
 		614AE3C124859AA90065F226 /* PetReplacementRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614AE3C024859AA90065F226 /* PetReplacementRow.swift */; };
 		614AE3C324859C3B0065F226 /* PetInsuranceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614AE3C224859C3B0065F226 /* PetInsuranceRow.swift */; };
 		614AE3C524859CC00065F226 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614AE3C424859CC00065F226 /* SettingsView.swift */; };
+		61A12185248E314700B1937E /* MouseAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A12184248E314700B1937E /* MouseAlertView.swift */; };
+		61A12187248E324C00B1937E /* MouseLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A12186248E324C00B1937E /* MouseLocation.swift */; };
+		61A12189248E327600B1937E /* LocationMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A12188248E327600B1937E /* LocationMap.swift */; };
+		61A1218B248E32A400B1937E /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A1218A248E32A400B1937E /* LocationView.swift */; };
 		61F8B79824891A7B006CE592 /* PetStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F8B79724891A7B006CE592 /* PetStatusModel.swift */; };
 		61F8B79A24891B79006CE592 /* PetBioRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F8B79924891B79006CE592 /* PetBioRow.swift */; };
 		61F8B79C24891DD8006CE592 /* MoodRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F8B79B24891DD8006CE592 /* MoodRectangleView.swift */; };
@@ -73,6 +77,10 @@
 		614AE3C024859AA90065F226 /* PetReplacementRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetReplacementRow.swift; sourceTree = "<group>"; };
 		614AE3C224859C3B0065F226 /* PetInsuranceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInsuranceRow.swift; sourceTree = "<group>"; };
 		614AE3C424859CC00065F226 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		61A12184248E314700B1937E /* MouseAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouseAlertView.swift; sourceTree = "<group>"; };
+		61A12186248E324C00B1937E /* MouseLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouseLocation.swift; sourceTree = "<group>"; };
+		61A12188248E327600B1937E /* LocationMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMap.swift; sourceTree = "<group>"; };
+		61A1218A248E32A400B1937E /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		61F8B79724891A7B006CE592 /* PetStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStatusModel.swift; sourceTree = "<group>"; };
 		61F8B79924891B79006CE592 /* PetBioRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBioRow.swift; sourceTree = "<group>"; };
 		61F8B79B24891DD8006CE592 /* MoodRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodRectangleView.swift; sourceTree = "<group>"; };
@@ -119,6 +127,7 @@
 				614AE37D2483F2620065F226 /* AppDelegate.swift */,
 				614AE37F2483F2620065F226 /* SceneDelegate.swift */,
 				614AE3812483F2620065F226 /* ContentView.swift */,
+				61A12184248E314700B1937E /* MouseAlertView.swift */,
 				614AE3832483F2690065F226 /* Assets.xcassets */,
 				614AE3882483F2690065F226 /* LaunchScreen.storyboard */,
 				614AE38B2483F2690065F226 /* Info.plist */,
@@ -230,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				61F8B79724891A7B006CE592 /* PetStatusModel.swift */,
+				61A12186248E324C00B1937E /* MouseLocation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -243,6 +253,8 @@
 				61F8B79F24891F57006CE592 /* PetCareRow.swift */,
 				61F8B7A124892008006CE592 /* PetProfileImage.swift */,
 				61F8B7A3248920AC006CE592 /* PetCareView.swift */,
+				61A12188248E327600B1937E /* LocationMap.swift */,
+				61A1218A248E32A400B1937E /* LocationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -329,6 +341,7 @@
 				614AE3972483F7DD0065F226 /* Color+Extensions.swift in Sources */,
 				614AE3952483F7BD0065F226 /* String+Extensions.swift in Sources */,
 				61F8B7A4248920AC006CE592 /* PetCareView.swift in Sources */,
+				61A12185248E314700B1937E /* MouseAlertView.swift in Sources */,
 				614AE3B72485943B0065F226 /* HumanPet.swift in Sources */,
 				61F8B7A024891F57006CE592 /* PetCareRow.swift in Sources */,
 				614AE3C524859CC00065F226 /* SettingsView.swift in Sources */,
@@ -343,10 +356,13 @@
 				614AE39D2483FFBD0065F226 /* Chat.swift in Sources */,
 				614AE3A924841BA70065F226 /* MewsListView.swift in Sources */,
 				614AE3A32484132E0065F226 /* MewsAuthorView.swift in Sources */,
+				61A12187248E324C00B1937E /* MouseLocation.swift in Sources */,
+				61A12189248E327600B1937E /* LocationMap.swift in Sources */,
 				614AE3AE24842E490065F226 /* MewsChatView.swift in Sources */,
 				614AE3992483F8070065F226 /* Date+Extensions.swift in Sources */,
 				61F8B79C24891DD8006CE592 /* MoodRectangleView.swift in Sources */,
 				614AE3AC248420930065F226 /* MewsChatRow.swift in Sources */,
+				61A1218B248E32A400B1937E /* LocationView.swift in Sources */,
 				614AE3BB2485978B0065F226 /* PetPreferences.swift in Sources */,
 				614AE39B2483F8800065F226 /* User.swift in Sources */,
 			);
